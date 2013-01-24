@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/jashmenn/activeuuid.git
+  revision: 423bc583b6e76f57ce105793e6bd069b2a5886c7
+  specs:
+    activeuuid (0.3.0)
+      activerecord (>= 3.1)
+      uuidtools
+
+GIT
   remote: git://github.com/puffer/puffer.git
   revision: 18fc064be6dccbe61b7bf584ad3e4787263692ca
   specs:
@@ -50,9 +58,6 @@ GEM
     activesupport (3.2.11)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    activeuuid (0.3.0)
-      activerecord
-      uuidtools
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
@@ -162,6 +167,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeuuid!
   bcrypt-ruby
   capistrano
   coffee-rails

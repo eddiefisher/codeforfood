@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'pg'
 
+gem 'activeuuid', github: 'jashmenn/activeuuid'
+
 gem 'puffer', github: 'puffer/puffer'
 gem 'puffer_pages', github: 'puffer/puffer_pages', branch: 'uuid'
 
