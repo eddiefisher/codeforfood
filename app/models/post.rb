@@ -9,4 +9,8 @@ class Post < ActiveRecord::Base
   def should_generate_new_friendly_id?
     new_record?
   end
+
+  def to_liquid
+    @to_liquid ||= PostDrop.new self
+  end
 end

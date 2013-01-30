@@ -1,6 +1,6 @@
-class PostDrop < Liquid::PostDrop
+class PostDrop < Liquid::Drop
   attr_accessor :post
-  delegate :title, :body, to: :post
+  delegate :title, :body, :created_at, :updated_at, to: :post
 
   def initialize post
     @post = post

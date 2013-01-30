@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/puffer/puffer_pages.git
-  revision: 45db905a8121da31f25273440db9d94884952f2a
+  revision: fd2c557d96556aef2f1c2a1ef89596ee440df6e2
   branch: uuid
   specs:
     puffer_pages (0.5.0)
