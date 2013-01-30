@@ -6,5 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body
       t.timestamps
     end
+
+    add_index :posts, :slug, unique: true
   end
 end

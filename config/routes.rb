@@ -1,5 +1,7 @@
 Codeforfood::Application.routes.draw do
 
+  root to: 'posts#index'
+
   resources :posts, only: [:index, :show]
 
   namespace :admin do
@@ -7,8 +9,8 @@ Codeforfood::Application.routes.draw do
     resources :layouts
     resources :snippets
     resources :origins
-    resources :assets
     resources :puffer_users
+    resources :posts
   end
 
   mount Puffer::Engine => '/'

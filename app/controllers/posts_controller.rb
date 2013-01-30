@@ -7,5 +7,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    redirect_to @post, status: 301 if request.path != post_path(@post)
   end
 end
