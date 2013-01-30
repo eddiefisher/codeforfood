@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124161430) do
+ActiveRecord::Schema.define(:version => 20130125022012) do
 
   create_table "layouts", :id => false, :force => true do |t|
     t.uuid     "id",         :null => false
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(:version => 20130124161430) do
 
   add_index "pages", ["location"], :name => "index_pages_on_location"
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "puffer_users", :force => true do |t|
     t.string   "email"

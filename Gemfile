@@ -12,9 +12,25 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'therubyracer'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
+gem 'friendly_id'
 gem 'bcrypt-ruby'
 gem 'unicorn'
 gem 'capistrano'
+
+group :development, :test do
+  gem 'fabrication'
+  gem 'forgery'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+end
