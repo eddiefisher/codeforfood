@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/puffer/puffer_pages.git
-  revision: fd2c557d96556aef2f1c2a1ef89596ee440df6e2
+  revision: 22a23bfa6284a30ce9275e3ecdd231c7262c8b5e
   branch: uuid
   specs:
     puffer_pages (0.5.0)
@@ -27,6 +27,13 @@ GIT
       nested_set
       puffer
       rails (>= 3.1)
+
+GIT
+  remote: git://github.com/sosedoff/capistrano-unicorn.git
+  revision: c2862dc2af256d31b2353cc223a608c05ac430b5
+  specs:
+    capistrano-unicorn (0.1.6)
+      capistrano
 
 GEM
   remote: https://rubygems.org/
@@ -178,6 +185,8 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
+    rvm-capistrano (1.2.7)
+      capistrano (>= 2.0.0)
     sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -215,6 +224,7 @@ DEPENDENCIES
   activeuuid!
   bcrypt-ruby
   capistrano
+  capistrano-unicorn!
   coffee-rails
   database_cleaner
   fabrication
@@ -230,6 +240,7 @@ DEPENDENCIES
   rb-fsevent
   rb-inotify
   rspec-rails
+  rvm-capistrano
   sass-rails
   therubyracer
   uglifier
