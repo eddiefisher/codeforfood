@@ -8,7 +8,6 @@ set :server_name, 'codeforfood.ru'
 set :use_sudo, false
 set :user, 'pyromaniac'
 set(:deploy_to) { "/home/#{user}/#{application}" }
-set :deploy_via, :remote_cache
 set :rvm_ruby_string, '1.9.3'
 
 default_run_options[:pty] = true
@@ -21,10 +20,13 @@ namespace :customs do
   task :config do
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
+  task :symlink do
+    run "ln -nfs #{shared_path}/sockets #{latest_release}/tmp/sockets"
+  end
 end
 
 before 'deploy:assets:precompile', 'customs:config'
-# after 'deploy:symlink', 'customs:symlink'
+after 'deploy:symlink', 'customs:symlink'
 # if you want to clean up old releases on each deploy uncomment this:
 after 'deploy:restart', 'deploy:cleanup'
 
