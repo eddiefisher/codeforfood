@@ -9,6 +9,7 @@ set :use_sudo, false
 set :user, 'pyromaniac'
 set(:deploy_to) { "/home/#{user}/#{application}" }
 set :deploy_via, :remote_cache
+set :rvm_ruby_string, '1.9.3'
 
 default_run_options[:pty] = true
 
@@ -22,7 +23,7 @@ namespace :customs do
   end
 end
 
-after 'deploy:update_code', 'customs:config'
+before 'deploy:assets:precompile', 'customs:config'
 # after 'deploy:symlink', 'customs:symlink'
 # if you want to clean up old releases on each deploy uncomment this:
 # after 'deploy:restart', 'deploy:cleanup'
@@ -32,3 +33,4 @@ after 'deploy:update_code', 'customs:config'
 
 require 'capistrano-unicorn'
 require 'rvm/capistrano'
+require 'bundler/capistrano'
