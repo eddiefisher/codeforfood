@@ -27,11 +27,10 @@ end
 
 before 'deploy:assets:precompile', 'customs:config'
 after 'deploy:symlink', 'customs:symlink'
-# if you want to clean up old releases on each deploy uncomment this:
-after 'deploy:restart', 'deploy:cleanup'
-
 # after 'deploy:restart', 'unicorn:reload'
 after 'deploy:restart', 'unicorn:restart'
+# if you want to clean up old releases on each deploy uncomment this:
+after 'deploy:restart', 'deploy:cleanup'
 
 require 'capistrano-unicorn'
 require 'rvm/capistrano'
