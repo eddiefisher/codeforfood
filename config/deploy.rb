@@ -26,7 +26,7 @@ namespace :customs do
 end
 
 before 'deploy:assets:precompile', 'customs:config'
-after 'deploy:symlink', 'customs:symlink'
+after 'deploy:create_symlink', 'customs:symlink'
 # after 'deploy:restart', 'unicorn:reload'
 after 'deploy:restart', 'unicorn:restart'
 # if you want to clean up old releases on each deploy uncomment this:
