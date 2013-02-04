@@ -14,10 +14,11 @@ gem 'unicorn'
 
 group :assets do
   gem 'sass-rails'
+  gem 'compass-rails'
+  gem 'zurb-foundation'
   gem 'coffee-rails'
   gem 'therubyracer'
   gem 'uglifier'
-  gem 'zurb-foundation'
 end
 
 group :development, :test do
